@@ -27,6 +27,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hydon\Downloads\Documents\Khai phá dữ liệu\Digit Classification\Test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hydon\Downloads\Documents\Khai phá dữ liệu\Digit Classification" />
     </key>
@@ -155,6 +158,18 @@
       <workItem from="1588784836650" duration="1816000" />
       <workItem from="1588855224239" duration="76000" />
       <workItem from="1588868417135" duration="1139000" />
+      <workItem from="1589120077803" duration="189000" />
+      <workItem from="1589180730371" duration="761000" />
+      <workItem from="1589187984913" duration="919000" />
+      <workItem from="1589367814593" duration="4170000" />
+      <workItem from="1589373881888" duration="80000" />
+      <workItem from="1589422750316" duration="695000" />
+      <workItem from="1589426204350" duration="1424000" />
+      <workItem from="1589434182555" duration="653000" />
+      <workItem from="1589436913803" duration="61000" />
+      <workItem from="1589437032981" duration="298000" />
+      <workItem from="1589437828920" duration="1221000" />
+      <workItem from="1589441413503" duration="10000" />
     </task>
     <servers />
   </component>
@@ -162,22 +177,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="200" key="GridCell.Tab.0.bottom" timestamp="1588869517231">
+    <state width="1493" height="666" key="GridCell.Tab.0.bottom" timestamp="1589438446936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588869517231" />
-    <state width="1493" height="200" key="GridCell.Tab.0.center" timestamp="1588869517231">
+    <state width="1493" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
+    <state width="1493" height="666" key="GridCell.Tab.0.center" timestamp="1589438446936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588869517231" />
-    <state width="1493" height="200" key="GridCell.Tab.0.left" timestamp="1588869517231">
+    <state width="1493" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
+    <state width="1493" height="666" key="GridCell.Tab.0.left" timestamp="1589438446936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588869517231" />
-    <state width="1493" height="200" key="GridCell.Tab.0.right" timestamp="1588869517231">
+    <state width="1493" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
+    <state width="1493" height="666" key="GridCell.Tab.0.right" timestamp="1589438446936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="200" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588869517231" />
+    <state width="1493" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588782937673">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -200,9 +215,9 @@
     <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588773830020" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Digit_Classification$load_datasets__1_.coverage" NAME="load_datasets (1) Coverage Results" MODIFIED="1588785771387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Digit_Classification$load_datasets__1_.coverage" NAME="load_datasets (1) Coverage Results" MODIFIED="1589436981415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Digit_Classification$neural_one_hidden_layer.coverage" NAME="neural_one_hidden_layer Coverage Results" MODIFIED="1588781562844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Digit_Classification$main.coverage" NAME="main Coverage Results" MODIFIED="1588775180391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Digit_Classification$train.coverage" NAME="train Coverage Results" MODIFIED="1588869180658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Digit_Classification$train.coverage" NAME="train Coverage Results" MODIFIED="1589438396904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

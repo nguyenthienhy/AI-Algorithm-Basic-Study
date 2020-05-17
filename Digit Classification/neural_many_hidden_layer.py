@@ -1,5 +1,4 @@
 import numpy as np
-import h5py
 import matplotlib.pyplot as plt
 from constant import sigmoid, sigmoid_backward, relu, relu_backward
 
@@ -25,7 +24,7 @@ def initialize_parameters(n_x, n_h, n_y):
 
 def initialize_parameters_deep(layer_dims):
 
-    layer_dims  # mảng chứa dimentions của từng layer trong mạng
+    #layer_dims mảng chứa dimentions của từng layer trong mạng
     np.random.seed(3)
     parameters = {}
     L = len(layer_dims)  # số layers
@@ -202,3 +201,5 @@ def L_layer_model(X, Y, layers_dims, learning_rate=0.0075, num_iterations=3000, 
     plt.show()
 
     return parameters
+
+

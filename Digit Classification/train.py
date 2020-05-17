@@ -7,7 +7,9 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 from PIL import Image
 from keras_model import CNN_model
+import time
 
+start = time.time()
 
 def prepareData(use_CNN = False):
     X_data , y_data = load_datasets.X_data , load_datasets.y_data
@@ -26,8 +28,8 @@ def prepareData(use_CNN = False):
     print(X_shuffle.shape)
     print(y_shuffle.shape)
 
-    X_train , X_test , y_train , y_test = X_shuffle[: , 0 : 16000] , X_shuffle[: , 16000 : -1] , \
-                                          y_shuffle[: , 0 : 16000] , y_shuffle[: , 16000 : -1]
+    X_train , X_test , y_train , y_test = X_shuffle[: , 0 : 28560] , X_shuffle[: , 28560 : -1] , \
+                                          y_shuffle[: , 0 : 28560] , y_shuffle[: , 28560 : -1]
     if use_CNN:
         X_train = X_train.T
         X_test = X_test.T
@@ -46,7 +48,9 @@ def training(X_train , X_test , y_train , y_test , use_method):
         parameters = L_layer_model(X_train, y_train, layers_dims , learning_rate=0.0075, num_iterations=10000,
                                    print_cost=True)
     elif use_method == "cnn":
-        CNN_model(X_train, y_train, X_test, y_test, 30 , 62)
+        CNN_model(X_train, y_train, X_test, y_test, 50 , 200 , 62)
 
 X_train , X_test , y_train , y_test = prepareData(use_CNN=True)
+end = time.time()
+print(str(-start + end))
 training(X_train , X_test , y_train , y_test , "cnn")

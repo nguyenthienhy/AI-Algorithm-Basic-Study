@@ -11,7 +11,7 @@ defines = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
            "u", "u_u", "v", "v_u", "w", "w_u", "x", "x_u",
            "y", "y_u", "z", "z_u"]
 
-assert(len(defines) == 62)
+assert (len(defines) == 62)
 
 X_data = []
 y_data = []
@@ -21,10 +21,19 @@ def readImage(path, convert_to_gray):
     if convert_to_gray == False:
         image = Image.open(path)
         array = np.array((image).resize((28, 28)), dtype=np.float32)
-        return (255 - np.array((image).resize((28, 28)), dtype=np.float32).reshape(28 * 28 * 3, 1)) / 255.0
+        return array.reshape(28 * 28 * 3, 1) / 255.0
     else:
         image = Image.open(path).convert('L')
-        return (255 - np.array((image).resize((28, 28)), dtype=np.float32).reshape(28 * 28, 1)) / 255.0
+        array = np.array((image).resize((28, 28)), dtype=np.float32)
+        '''
+        for i in range(array.shape[0]):
+            for j in range(array.shape[1]):
+                if array[i][j] >= 127:
+                    array[i][j] = 0
+                else:
+                    array[i][j] = 255
+        '''
+        return array.reshape(28 * 28 , 1) / 255.0
 
 
 def readDataForOneLabel(path, label, maxTake):
@@ -42,13 +51,21 @@ def readDataForOneLabel(path, label, maxTake):
                 break
 
 
+def readSubDir(basepath , label , maxTake):
+    for entry in os.listdir(basepath):
+        basepath_sub = basepath
+        if os.path.isdir((os.path.join(basepath_sub, entry))):
+            basepath_sub = basepath + '/' + entry
+            readDataForOneLabel(basepath_sub , label , maxTake)
+            readSubDir(basepath_sub  , label , maxTake)
+
 def readDataAll(path, maxTake):
     for l in range(len(defines)):
-        readDataForOneLabel(
-            (path + '/' + str(defines[l])), defines[l], maxTake)
+        readSubDir((path + '/' + str(defines[l])), defines[l], maxTake)
+        readDataForOneLabel((path + '/' + str(defines[l])), defines[l], maxTake)
 
 
-readDataAll("Data", 400)
+readDataAll("C:\\Users\\hydon\\OneDrive\\Máy tính\\Data", 100)
 
 Original_Data = X_data
 
