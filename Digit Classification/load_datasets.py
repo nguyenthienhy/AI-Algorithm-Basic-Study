@@ -3,28 +3,27 @@ import os
 import numpy as np
 
 defines = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
-           "a", "a_u", "b", "b_u", "c", "c_u", "d", "d_u",
-           "e", "e_u", "f", "f_u", "g", "g_u", "h", "h_u",
-           "i", "i_u", "j", "j_u", "k", "k_u", "l", "l_u",
-           "m", "m_u", "n", "n_u", "o", "o_u", "p", "p_u",
-           "q", "q_u", "r", "r_u", "s", "s_u", "t", "t_u",
-           "u", "u_u", "v", "v_u", "w", "w_u", "x", "x_u",
-           "y", "y_u", "z", "z_u"]
+           "a_u", "b_u", "c_u", "d_u",
+           "e_u", "f_u", "g_u", "h_u",
+           "i_u", "j_u", "k_u", "l_u",
+           "m_u", "n_u", "o_u", "p_u",
+           "q_u", "r_u", "s_u", "t_u",
+           "u_u", "v_u", "w_u", "x_u",
+           "y_u", "z_u"]
 
-assert (len(defines) == 62)
+assert (len(defines) == 36)
 
 X_data = []
 y_data = []
 
-
 def readImage(path, convert_to_gray):
-    if convert_to_gray == False:
+    if not convert_to_gray:
         image = Image.open(path)
-        array = np.array((image).resize((28, 28)), dtype=np.float32)
-        return array.reshape(28 * 28 * 3, 1) / 255.0
+        array = np.array(image.resize((28, 28)), dtype=np.float32)
+        return array.reshape(28 * 28 * 3 , 1) / 255.0
     else:
         image = Image.open(path).convert('L')
-        array = np.array((image).resize((28, 28)), dtype=np.float32)
+        array = np.array(image.resize((28, 28)), dtype=np.float32)
         '''
         for i in range(array.shape[0]):
             for j in range(array.shape[1]):
@@ -33,39 +32,34 @@ def readImage(path, convert_to_gray):
                 else:
                     array[i][j] = 255
         '''
-        return array.reshape(28 * 28 , 1) / 255.0
+        return array.reshape(28 * 28, 1) / 255.0
 
 
-def readDataForOneLabel(path, label, maxTake):
-    count = 0
+def readDataForOneLabel(path, label):
     for entry in os.listdir(path):
         if os.path.isfile((os.path.join(path, entry))):
-            count += 1
             X_data.append(readImage(path + '/' + entry, True))
             for index, label_digit in enumerate(defines):
                 if label == label_digit:
-                    temp_label = np.zeros((1, 62))
+                    temp_label = np.zeros((1, 36))
                     temp_label[0][index] = 1
                     y_data.append(temp_label[0])
-            if count == maxTake:
-                break
 
-
-def readSubDir(basepath , label , maxTake):
+def readSubDir(basepath, label):
     for entry in os.listdir(basepath):
         basepath_sub = basepath
         if os.path.isdir((os.path.join(basepath_sub, entry))):
             basepath_sub = basepath + '/' + entry
-            readDataForOneLabel(basepath_sub , label , maxTake)
-            readSubDir(basepath_sub  , label , maxTake)
+            readDataForOneLabel(basepath_sub, label)
+            readSubDir(basepath_sub, label)
 
-def readDataAll(path, maxTake):
+def readData(path):
     for l in range(len(defines)):
-        readSubDir((path + '/' + str(defines[l])), defines[l], maxTake)
-        readDataForOneLabel((path + '/' + str(defines[l])), defines[l], maxTake)
+        readSubDir((path + '/' + str(defines[l])), defines[l])
+        readDataForOneLabel((path + '/' + str(defines[l])), defines[l])
 
 
-readDataAll("C:\\Users\\hydon\\OneDrive\\Máy tính\\Data", 100)
+readData("Data")
 
 Original_Data = X_data
 

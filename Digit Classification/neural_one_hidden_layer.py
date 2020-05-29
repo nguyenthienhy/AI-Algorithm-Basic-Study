@@ -27,7 +27,6 @@ def layer_sizes(X, Y):
 
 
 def initialize_parameters(n_x, n_h, n_y):
-
     np.random.seed(2)
     W1 = np.random.randn(n_h, n_x) * 0.01
     b1 = np.zeros((n_h, 1))
@@ -59,7 +58,7 @@ parameters -- python dictionary containing your parameters W1, b1, W2 and b2
     Z2 = np.dot(W2, A1) + b2
     A2 = sigmoid(Z2)
 
-    assert(A2.shape == (62, X.shape[1]))
+    assert (A2.shape == (62, X.shape[1]))
 
     cache = {"Z1": Z1, "A1": A1, "Z2": Z2, "A2": A2}
     return A2, cache
@@ -73,7 +72,6 @@ def compute_cost(A2, Y):
 
 
 def backward_propagation(parameters, cache, X, Y):
-
     m = X.shape[1]
 
     W1 = parameters["W1"]
@@ -99,7 +97,6 @@ def backward_propagation(parameters, cache, X, Y):
 
 
 def update_parameters(parameters, grads, learning_rate=1.2):
-
     W1 = parameters["W1"]
     b1 = parameters["b1"]
     W2 = parameters["W2"]
@@ -128,7 +125,6 @@ def update_parameters(parameters, grads, learning_rate=1.2):
 
 
 def nn_model(X, Y, n_h, num_iterations=10000, print_cost=False):
-
     np.random.seed(3)
     n_x = layer_sizes(X, Y)[0]
     n_y = layer_sizes(X, Y)[2]
