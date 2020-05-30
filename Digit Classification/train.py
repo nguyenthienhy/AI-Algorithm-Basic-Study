@@ -52,5 +52,5 @@ def training(X_train , X_test , y_train , y_test , use_method):
 
 X_train , X_test , y_train , y_test = prepareData(use_CNN=True)
 end = time.time()
-print(str(-start + end))
+print(str(end - start))
 training(X_train , X_test , y_train , y_test , "cnn")

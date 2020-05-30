@@ -29,9 +29,6 @@ def text_preprocessing(X):
         # Substituting multiple spaces with single space
         document = re.sub(r'\s+', ' ', document, flags=re.I)
 
-        # Removing prefixed 'b'
-        document = re.sub(r'^b\s+', '', document)
-
         # Converting to Lowercase
         document = document.lower()
 
@@ -91,5 +88,4 @@ def searchDir(basepath):
             searchDir(basepath_sub)
 '''
 # searchDir(basepath)
-
 #
