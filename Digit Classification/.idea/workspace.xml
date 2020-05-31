@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="186ebbbf-823b-4b4f-b2c2-e2c0c17ea07b" name="Default Changelist" comment="" />
+    <list default="true" id="186ebbbf-823b-4b4f-b2c2-e2c0c17ea07b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keras_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnn_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weights.best.hdf5" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,24 +24,31 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1bXLISoyeNAporM5oN8IiHzyVB2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hydon\Downloads\Documents\Khai phá dữ liệu\Digit Classification\Test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hydon\Downloads\Documents\Khai phá dữ liệu\Digit Classification" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hydon\OneDrive\Documents\GitHub\Machine-Learning-Project\Digit Classification\Test" />
+      <recent name="C:\Users\hydon\Downloads\Documents\Khai phá dữ liệu\Digit Classification\Test" />
     </key>
   </component>
   <component name="RunManager" selected="Python.train">
@@ -132,18 +149,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -170,29 +175,38 @@
       <workItem from="1589437032981" duration="298000" />
       <workItem from="1589437828920" duration="1221000" />
       <workItem from="1589441413503" duration="10000" />
+      <workItem from="1590818271110" duration="2746000" />
+      <workItem from="1590822542320" duration="499000" />
+      <workItem from="1590823227360" duration="298000" />
+      <workItem from="1590824160948" duration="10383000" />
+      <workItem from="1590845228650" duration="1599000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="666" key="GridCell.Tab.0.bottom" timestamp="1589438446936">
+    <state x="506" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590831348723">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
-    <state width="1493" height="666" key="GridCell.Tab.0.center" timestamp="1589438446936">
+    <state x="506" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1590831348723" />
+    <state width="1493" height="666" key="GridCell.Tab.0.bottom" timestamp="1590845534400">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
-    <state width="1493" height="666" key="GridCell.Tab.0.left" timestamp="1589438446936">
+    <state width="1493" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590845534400" />
+    <state width="1493" height="666" key="GridCell.Tab.0.center" timestamp="1590845534400">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
-    <state width="1493" height="666" key="GridCell.Tab.0.right" timestamp="1589438446936">
+    <state width="1493" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590845534400" />
+    <state width="1493" height="666" key="GridCell.Tab.0.left" timestamp="1590845534400">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589438446936" />
+    <state width="1493" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590845534400" />
+    <state width="1493" height="666" key="GridCell.Tab.0.right" timestamp="1590845534400">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590845534400" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588782937673">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -215,9 +229,9 @@
     <state x="277" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588773830020" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Digit_Classification$load_datasets__1_.coverage" NAME="load_datasets (1) Coverage Results" MODIFIED="1589436981415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Digit_Classification$neural_one_hidden_layer.coverage" NAME="neural_one_hidden_layer Coverage Results" MODIFIED="1588781562844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Digit_Classification$main.coverage" NAME="main Coverage Results" MODIFIED="1588775180391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Digit_Classification$train.coverage" NAME="train Coverage Results" MODIFIED="1589438396904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Digit_Classification$neural_one_hidden_layer.coverage" NAME="neural_one_hidden_layer Coverage Results" MODIFIED="1588781562844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Digit_Classification$load_datasets__1_.coverage" NAME="load_datasets (1) Coverage Results" MODIFIED="1590831237942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Digit_Classification$train.coverage" NAME="train Coverage Results" MODIFIED="1590845503881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
