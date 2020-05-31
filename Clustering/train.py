@@ -25,6 +25,7 @@ def readDataWithLabelEncoder(filename):
 	le = preprocessing.LabelEncoder()
 	X[:, 0] = le.fit_transform(X[:, 0].astype(str))
 
+	# chuẩn hoá dữ liệu theo tiêu chuẩn dùng max
 	X = normalize(X , norm='max')
 
 	df_new = pd.DataFrame(data=X)
@@ -37,8 +38,9 @@ def silhouette_analysis(X_train):
 		km = KMeans(n_clusters = k)
 		labels = km.fit_predict(X_train)
 
-		# Get silhouette for each samples
-		silhouette_vals = silhouette_samples(X_train, labels)
+		# Tính điểm silhouette cho mỗi điểm dữ liệu
+		silhouette_vals = silhouette_samples(X_train , labels)
+		assert (len(silhouette_vals) == X_train.shape[0])
 		print(silhouette_vals)
 
 		silhouette_avg = silhouette_score(X_train, labels)

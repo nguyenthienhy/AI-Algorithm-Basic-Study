@@ -1,38 +1,17 @@
-import load_datasets
 from neural_many_hidden_layer import L_layer_model
 from neural_one_hidden_layer import nn_model
 from sklearn.utils import shuffle
 from sklearn.metrics import classification_report
-from sklearn.model_selection import train_test_split
 import numpy as np
-from PIL import Image
-from keras_model import CNN_model
+from cnn_model import *
 import time
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import Dropout
-from keras.layers import Flatten
-from keras.layers.convolutional import Conv2D
-from keras.layers.convolutional import MaxPooling2D
-from keras.callbacks import ModelCheckpoint
 
 start = time.time()
 
-def load_model():
-    model = Sequential()
-    model.add(Conv2D(32, (3, 3), input_shape=(28, 28, 1), activation='relu'))
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-    model.add(Dropout(0.2))
-    model.add(Flatten())
-    model.add(Dense(128, activation='relu'))
-    model.add(Dense(36, activation='softmax'))
-    model.load_weights("weights.best.hdf5")
-    model.compile(loss='categorical_crossentropy',
-                  optimizer='adam', metrics=['accuracy'])
-    return model
-
 def prepareData(use_CNN=False):
-    X_data, y_data = load_datasets.X_data, load_datasets.y_data
+    import load_datasets
+
+    X_data, y_data = load_datasets.get_data("Data_normalize")
 
     X_shuffle, y_shuffle = [], []
 
@@ -45,12 +24,8 @@ def prepareData(use_CNN=False):
     X_shuffle = np.array(X_shuffle).T
     y_shuffle = np.array(y_shuffle).T
 
-    print(X_shuffle.shape)
-    print(y_shuffle.shape)
-
     # get 80 percent train
     num_train = int(X_shuffle.shape[1] * 0.8)
-    print("Number of trainings : " + str(num_train))
 
     X_train, X_test, y_train, y_test = X_shuffle[:, 0: num_train], X_shuffle[:, num_train: -1], \
         y_shuffle[:, 0: num_train], y_shuffle[:, num_train: -1]
@@ -66,8 +41,7 @@ def prepareData(use_CNN=False):
 
     return X_train, X_test, y_train, y_test
 
-
-def training(X_train, X_test, y_train, y_test, use_method):
+def create_training_session(X_train, X_test, y_train, y_test, use_method):
     if use_method == "one_hidden_layer":
         parameters = nn_model(X_train, y_train, 24,
                               num_iterations=10000, print_cost=True)
@@ -76,21 +50,15 @@ def training(X_train, X_test, y_train, y_test, use_method):
         parameters = L_layer_model(X_train, y_train, layers_dims, learning_rate=0.0075, num_iterations=10000,
                                    print_cost=True)
     elif use_method == "cnn":
-        CNN_model(X_train, y_train, X_test, y_test, 50 , 200 , 36)
+        CNN_model(X_train, y_train, X_test, y_test, 100 , 200 , 36)
 
-def predict(model , path):
-    # show image of test
-    image = Image.open(path).convert('L')
-    image.show()
-    array = np.array(image.resize((28, 28)), dtype=np.float32)
-    array = array.reshape(28 * 28 , 1) / 255.0
-    array = np.array([array])
-    array = array.reshape(1 , 28 , 28 , 1).astype('float32')
-    return model.predict_classes(array)
-
-#X_train, X_test, y_train, y_test = prepareData(use_CNN=True)
-#end = time.time()
-#print("Load data take : " + str(end - start) + "s")
-#training(X_train, X_test, y_train, y_test, "cnn")
+def train():
+    X_train, X_test, y_train, y_test = prepareData(use_CNN=True)
+    create_training_session(X_train, X_test, y_train, y_test, "cnn")
+import load_datasets
+List_Images , y_true = load_datasets.readImages("Test")
 model = load_model()
-print(predict(model , "test.png")[0])
+y_redict = []
+for im in List_Images:
+    y_redict.append(predict(model , im))
+print(classification_report(y_true , y_redict))

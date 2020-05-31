@@ -19,7 +19,6 @@ def readDataWithLabelEncoder(filename):
 	imp_mean.fit(X_train_and_val)
 	X_train_and_val = imp_mean.transform(X_train_and_val)
 	
-
 	le = preprocessing.LabelEncoder()
 	for i in range(X_train_and_val.shape[1]):
 		X_train_and_val[: , i] = le.fit_transform(X_train_and_val[: , i].astype(str))
