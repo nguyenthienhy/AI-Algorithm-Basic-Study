@@ -6,6 +6,7 @@ import numpy as np
 from cnn_model import *
 import time
 import show_result as sr
+import Interface
 
 start = time.time()
 
@@ -65,7 +66,8 @@ y_redict = []
 for im in List_Images:
     y_redict.append(predictOutNum(model , im))
 print(classification_report(y_true , y_redict))
-'''
+
 List_Images = sr.readTest("Test")
 List_Images = shuffle(List_Images)
 sr.show_results(model , List_Images , 4 , 5)
+'''
