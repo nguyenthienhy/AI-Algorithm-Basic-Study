@@ -5,13 +5,14 @@ from sklearn.metrics import classification_report
 import numpy as np
 from cnn_model import *
 import time
+import show_result as sr
 
 start = time.time()
 
 def prepareData(use_CNN=False):
     import load_datasets
 
-    X_data, y_data = load_datasets.get_data("Data_normalize")
+    X_data, y_data = load_datasets.get_data("Data")
 
     X_shuffle, y_shuffle = [], []
 
@@ -39,7 +40,7 @@ def prepareData(use_CNN=False):
             X_train.shape[0], 28, 28, 1).astype('float32')
         X_test = (X_test).reshape(X_test.shape[0], 28, 28, 1).astype('float32')
 
-    return X_train, X_test, y_train, y_test
+    return X_train, X_test, y_train , y_test
 
 def create_training_session(X_train, X_test, y_train, y_test, use_method):
     if use_method == "one_hidden_layer":
@@ -50,15 +51,21 @@ def create_training_session(X_train, X_test, y_train, y_test, use_method):
         parameters = L_layer_model(X_train, y_train, layers_dims, learning_rate=0.0075, num_iterations=10000,
                                    print_cost=True)
     elif use_method == "cnn":
-        CNN_model(X_train, y_train, X_test, y_test, 100 , 200 , 36)
+        CNN_model(X_train, y_train, X_test, y_test, 60 , 512 , 36)
 
 def train():
     X_train, X_test, y_train, y_test = prepareData(use_CNN=True)
-    create_training_session(X_train, X_test, y_train, y_test, "cnn")
-import load_datasets
-List_Images , y_true = load_datasets.readImages("Test")
+    create_training_session(X_train, X_test, y_train, y_test , "cnn")
+
 model = load_model()
+'''
+import load_datasets
+List_Images , y_true = load_datasets.readImages("Test_full")
 y_redict = []
 for im in List_Images:
-    y_redict.append(predict(model , im))
+    y_redict.append(predictOutNum(model , im))
 print(classification_report(y_true , y_redict))
+'''
+List_Images = sr.readTest("Test")
+List_Images = shuffle(List_Images)
+sr.show_results(model , List_Images , 4 , 5)

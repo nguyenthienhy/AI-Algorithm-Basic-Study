@@ -7,7 +7,7 @@ from keras.layers.convolutional import MaxPooling2D
 from keras.callbacks import ModelCheckpoint
 from PIL import Image
 import numpy as np
-import process_image
+import constant
 
 def CNN_model(X_train, y_train, X_test, y_test, num_epochs, batch_size, num_classes):
     
@@ -50,12 +50,23 @@ def load_model():
 
 
 def predict(model, path):
-    filename = process_image.convert_to_white_background(path)
+    # filename = process_image.convert_to_white_background(path)
     # show image of test
-    image = Image.open(filename).convert('L')
+    image = Image.open(path).convert('L')
+    array = np.array(image.resize((28, 28)), dtype=np.float32)
+    array = array.reshape(28 * 28, 1) / 255.0
+    array = np.array([array])
+    array = array.reshape(1, 28, 28, 1).astype('float32')
+    return constant.defines[model.predict_classes(array)[0]]
+
+def predictOutNum(model, path):
+    # filename = process_image.convert_to_white_background(path)
+    # show image of test
+    image = Image.open(path).convert('L')
     array = np.array(image.resize((28, 28)), dtype=np.float32)
     array = array.reshape(28 * 28, 1) / 255.0
     array = np.array([array])
     array = array.reshape(1, 28, 28, 1).astype('float32')
     return model.predict_classes(array)[0]
+
 

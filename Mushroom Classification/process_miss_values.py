@@ -6,6 +6,12 @@ from sklearn import preprocessing
 from sklearn import metrics
 import pandas as pd
 
+def convert_data_to_string(X_train_and_val):
+	for i in range(X_train_and_val.shape[0]):
+		for j in range(X_train_and_val.shape[1]):
+			X_train_and_val[i][j] = str(X_train_and_val[i][j])
+	return X_train_and_val
+
 def readDataWithLabelEncoder(filename):
 	data = pd.read_csv(filename)
 	X = data.iloc[: , 1 : ].values
@@ -14,11 +20,14 @@ def readDataWithLabelEncoder(filename):
 
 	X_train_and_val , X_test , y_train_and_val , y_test = train_test_split(X, y , test_size = 0.2 , random_state = 42)
 
-	# xử lý miss values
-	imp_mean = SimpleImputer(strategy='most_frequent')
+	X_train_and_val = convert_data_to_string(X_train_and_val)
+
+	# xử lý miss values , nếu xuất hiện giá trị "NaN" sẽ được thay thế bằng chuỗi "miss_values"
+	imp_mean = SimpleImputer(missing_values = "nan" , strategy = 'constant')
 	imp_mean.fit(X_train_and_val)
 	X_train_and_val = imp_mean.transform(X_train_and_val)
-	
+
+	# chuyển dữ liệu dàng chuỗi sang dạng số
 	le = preprocessing.LabelEncoder()
 	for i in range(X_train_and_val.shape[1]):
 		X_train_and_val[: , i] = le.fit_transform(X_train_and_val[: , i].astype(str))
@@ -38,7 +47,7 @@ print("Train example : " + str(X_train.shape[0]))
 print("Validation example : " + str(X_val.shape[0]))
 print("Test example : " + str(X_test.shape[0]))
 
-clf = RandomForestClassifier(max_depth = 3 , max_features="sqrt")
+clf = RandomForestClassifier(max_depth = 3 , max_features = "sqrt")
 clf.fit(X_train, y_train)
 
 print("Training accuracy : ", clf.score(X_train , y_train))

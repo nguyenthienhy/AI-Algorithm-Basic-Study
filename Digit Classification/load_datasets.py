@@ -10,12 +10,10 @@ def readImage(path, convert_to_gray):
     if not convert_to_gray:
         image = Image.open(path)
         array = np.array(image.resize((28, 28)), dtype=np.float32)
-        #array = process_image.convert_to_black_background(array)
         return array.reshape(28 * 28 * 3, 1) / 255.0
     else:
         image = Image.open(path).convert('L')
         array = np.array(image.resize((28, 28)), dtype=np.float32)
-        #array = process_image.convert_to_black_background(array)
         return array.reshape(28 * 28, 1) / 255.0
 
 
@@ -50,7 +48,7 @@ def readSubDir(X_data , y_data , basepath, label):
         basepath_sub = basepath
         if os.path.isdir((os.path.join(basepath_sub, entry))):
             basepath_sub = basepath + '/' + entry
-            readDataForOneLabel(basepath_sub, label)
+            readDataForOneLabel(X_data , y_data , basepath_sub, label)
             readSubDir(X_data , y_data , basepath_sub, label)
 
 def readImages(path):
