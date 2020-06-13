@@ -8,10 +8,6 @@ import numpy as np
 # load model
 model = load_model()
 
-# create global variables 
-operator = "Predicted Number: "
-operator2 = ""
-
 # create function to clear canvas and text
 def Clear():
     cv.delete("all")
