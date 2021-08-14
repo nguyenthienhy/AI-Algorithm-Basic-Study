@@ -1,1 +1,1 @@
-# Tìm hiểu các thuật toán học máy cơ bản
+# Learn how some machine learning algorithm works by building some models with specific data
